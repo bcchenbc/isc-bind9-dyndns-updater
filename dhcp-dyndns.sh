@@ -159,9 +159,9 @@ esac
 result="${result1}${result2}"
 
 if [ "${result}" != "00" ]; then
-    logger "DHCP-DNS Update failed: ${result}"
+    logger "DHCP-DNS Update failed: ${name}: ${result}"
 else
-    logger "DHCP-DNS Update succeeded"
+    logger "DHCP-DNS Update succeeded: ${name}.${domain} & ${ip}"
 fi
 
 exit ${result}

@@ -17,3 +17,6 @@ isc-bind9-dyndns-updater
 6. Run `04_update_dhcpd_conf.sh`.
 	- The `/etc/dhcp/dhcpd.conf` file is managed by UCS, this update may need to be applied again if UCS does removed the `include "/etc/dhcp/dhcp-dyndns.conf";` line. 
 7. Reboot (or restart all services).
+    - If things work as expected, there should be lines with "DHCP-DNS Update succeeded" in `var/log/messages`.
+    - `grep DHCP-DNS /var/log/messages` for logs from the updater script.
+    - `dhcp-lease-list` for listing current DHCP clients.
